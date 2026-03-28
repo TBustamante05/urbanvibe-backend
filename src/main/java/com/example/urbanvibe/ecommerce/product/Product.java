@@ -1,4 +1,4 @@
-package com.example.urbanvibe.ecommerce;
+package com.example.urbanvibe.ecommerce.product;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -23,7 +23,7 @@ public class Product {
     private String description;
 
     @Column
-    private String imageUrl;
+    private String[] imageUrls;
 
     @Column(nullable = false, length = 100)
     private String category;

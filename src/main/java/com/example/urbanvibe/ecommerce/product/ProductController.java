@@ -1,8 +1,5 @@
-package com.example.urbanvibe.ecommerce.controller;
+package com.example.urbanvibe.ecommerce.product;
 
-import com.example.urbanvibe.ecommerce.Product;
-import com.example.urbanvibe.ecommerce.service.ProductService;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,7 +1,5 @@
-package com.example.urbanvibe.ecommerce.service;
+package com.example.urbanvibe.ecommerce.product;
 
-import com.example.urbanvibe.ecommerce.Product;
-import com.example.urbanvibe.ecommerce.repository.ProductRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -37,7 +35,7 @@ public class ProductService {
         product.setName(productDetails.getName());
         product.setPrice(productDetails.getPrice());
         product.setDescription(productDetails.getDescription());
-        product.setImageUrl(productDetails.getImageUrl());
+        product.setImageUrls(productDetails.getImageUrls());
         product.setCategory(productDetails.getCategory());
         product.setStock(productDetails.getStock());
         return productRepository.save(product);
