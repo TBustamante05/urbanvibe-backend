@@ -3,6 +3,7 @@ package com.example.urbanvibe.ecommerce.auth;
 import com.example.urbanvibe.ecommerce.common.dto.AuthRequest;
 import com.example.urbanvibe.ecommerce.common.dto.AuthResponse;
 import com.example.urbanvibe.ecommerce.common.dto.RegisterRequest;
+import com.example.urbanvibe.ecommerce.common.dto.UserResponse;
 import com.example.urbanvibe.ecommerce.user.Role;
 import com.example.urbanvibe.ecommerce.user.User;
 import com.example.urbanvibe.ecommerce.user.UserRepository;
@@ -42,5 +43,11 @@ public class AuthService {
                 .orElseThrow();
         String token = jwtService.generateToken(user);
         return new AuthResponse(token);
+    }
+
+    public UserResponse me(String email) {
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+        return new UserResponse(user.getId(), user.getEmail(), user.getRole());
     }
 }

@@ -31,7 +31,7 @@ public class SecurityConfig {
         http
                 .csrf(AbstractHttpConfigurer::disable) // Desactivamos CSRF porque usamos JWT (stateless)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/**").permitAll()  // registro y login son públicos
+                        .requestMatchers("/api/auth/register", "/api/auth/login").permitAll()  // registro y login son públicos
                         .requestMatchers("/api/admin/**").hasRole("ADMIN") // solo admins
                         .anyRequest().authenticated()  // todo lo demás requiere login
                 )
